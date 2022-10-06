@@ -30,9 +30,12 @@ public class BootStrapData implements CommandLineRunner {
         bookRepository.save(ddd);
 
         Author rod = new Author("Rod", "Johnson");
-        Book noEJB = new Book("J2EE Development without EJB", " 39803732");
+        Book noEJB = new Book("J2EE Development without EJB", "3939459459");
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
+
+        authorRepository.save(rod);
+        bookRepository.save(noEJB);
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Books: " + bookRepository.count());
